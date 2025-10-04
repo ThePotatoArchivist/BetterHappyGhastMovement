@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "https://github.com/Tigercrl/BetterHappyGhastMovement/issues"
+license = "GNU LGPL 3.0"
+
+[[mods]]
+modId = "bhgm"
+version = "${version}"
+displayName = "Better Happy Ghast Movement"
+authors = "Tigercrl"
+description = '''
+Optimize the movement control of Happy Ghasts!
+'''
+displayURL = "https://modrinth.com/mod/bhgm"
+updateJSONURL = "https://api.modrinth.com/updates/bhgm/forge_updates.json"
+logoFile = "assets/bhgm/icon.png"
+
+[[dependencies.bhgm]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bhgm]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.6,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "bhgm.mixins.json"

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "bhgm",
+  "version": "${version}",
+  "name": "Better Happy Ghast Movement",
+  "description": "Optimize the movement control of Happy Ghasts!",
+  "authors": [
+    "Tigercrl"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/bhgm",
+    "sources": "https://github.com/Tigercrl/BetterHappyGhastMovement",
+    "issues": "https://github.com/Tigercrl/BetterHappyGhastMovement/issues"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/bhgm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "top.tigercrl.bhgm.fabric.BetterHappyGhastMovementFabric"
+    ],
+    "client": [
+      "top.tigercrl.bhgm.fabric.client.BetterHappyGhastMovementFabricClient"
+    ]
+  },
+  "mixins": [
+    "bhgm.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": ">=1.21.6",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

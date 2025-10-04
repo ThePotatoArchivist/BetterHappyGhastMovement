@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "top.tigercrl.bhgm.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "CameraMixin",
+    "ClientPacketListenerMixin",
+    "HappyGhastMixin",
+    "LocalPlayerMixin",
+    "ServerboundPlayerInputPacketMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
