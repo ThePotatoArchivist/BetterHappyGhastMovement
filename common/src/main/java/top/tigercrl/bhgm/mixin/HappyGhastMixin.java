@@ -7,6 +7,7 @@ import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import static top.tigercrl.bhgm.BetterHappyGhastMovement.isShiftKeyDown;
@@ -33,5 +34,15 @@ public class HappyGhastMixin {
         }
 
         cir.setReturnValue(new Vec3(x, y, z).scale(3.9 * ((HappyGhast) (Object) this).getAttributeValue(Attributes.FLYING_SPEED)));
+    }
+
+    @Inject(
+            method = "tickRidden",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/HappyGhast;getRiddenRotation(Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/phys/Vec2;"),
+            cancellable = true
+    )
+    private void onlyTurnWhileMoving(Player player, Vec3 vec3, CallbackInfo ci) {
+        if (player.xxa == 0 && player.zza == 0)
+            ci.cancel();
     }
 }
