@@ -20,7 +20,7 @@ public abstract class CameraMixin {
     public void correctEyeHeight(CallbackInfo ci) {
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer p = mc.player;
-        if (mc.cameraEntity == p && isControllingHappyGhast(p)) {
+        if (mc.getCameraEntity() == p && isControllingHappyGhast(p)) {
             eyeHeight += (1.62F - p.getEyeHeight()) * 0.5F;
         }
     }
